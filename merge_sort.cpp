@@ -1,3 +1,9 @@
+//Problem Statement:-
+//Given an array of integers output the sorted array
+//Solution:-
+//using merge sort
+//runtime complexity O(n*log(n)) for array of length n
+
 #include<iostream>
 #include<vector>
 
