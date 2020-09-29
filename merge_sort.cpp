@@ -1,7 +1,8 @@
 //Problem Statement:-
 //Given an array of integers output the sorted array
-//Solution:-
-//using merge sort
+//Solution(Merge sort):-
+//the main idea of the algorithm is to sort the left half and right half separaterly
+//then merge both the array to get the fully sorted array and this is done recursively
 //runtime complexity O(n*log(n)) for array of length n
 
 #include<iostream>
@@ -12,20 +13,20 @@ using namespace std;
 void merge(vector<int> &a,int l,int m,int r)
 {
 	int nl=m-l+1,nr=r-m;
-	vector<int> g(nl),h(nr);
+	vector<int> g(nl),h(nr);				//creating two temporary array
 	for(int i=l;i<=m;i++)
 		g[i-l]=a[i];
 	for(int i=m+1;i<=r;i++)
 		h[i-m-1]=a[i];
 	int i=0,j=0,k=l;
-	while(i<nl&&j<nr)
+	while(i<nl&&j<nr)						//merging
 	{
 		if(g[i]<=h[j])
-			a[k++]=g[i++];
+			a[k++]=g[i++];					
 		else
 			a[k++]=h[j++];
 	}
-	while(i<nl)
+	while(i<nl)								//inserting the remaining elements if any
 		a[k++]=g[i++];
 	while(j<nr)
 		a[k++]=h[j++];
@@ -36,9 +37,9 @@ void mergesort(vector<int> &a,int l,int r)
 	if(l<r)
 	{
 		int mid=(r+l)/2;
-		mergesort(a,l,mid);
-		mergesort(a,mid+1,r);
-		merge(a,l,mid,r);
+		mergesort(a,l,mid);					//for the left part
+		mergesort(a,mid+1,r);				//for the right part
+		merge(a,l,mid,r);					//merging the both parts
 	}
 
 }
