@@ -14,9 +14,9 @@ void merge(vector<int> &a,int l,int m,int r)
 {
 	int nl=m-l+1,nr=r-m;
 	vector<int> g(nl),h(nr);				//creating two temporary array
-	for(int i=l;i<=m;i++)
+	for(int i=l;i<=m;i++)					//assigning the left part
 		g[i-l]=a[i];
-	for(int i=m+1;i<=r;i++)
+	for(int i=m+1;i<=r;i++)					//assigning the right part
 		h[i-m-1]=a[i];
 	int i=0,j=0,k=l;
 	while(i<nl&&j<nr)						//merging
