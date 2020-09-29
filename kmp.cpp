@@ -14,15 +14,15 @@ int main()
 {
 	cout<<"\nEnter a text to be seached for the string : ";
 	string t;
-	cin>>t;
-	cout<<"\nEnter a string to be seached : ";
+	getline(cin,t);
+	cout<<"\nEnter a string : ";
 	string s;
-	cin>>s;
+	getline(cin,s);
 	string buff=s+'#'+t;
 	int n=buff.size();
 
 	vector<int> pi(n);
-	for(int i=1;i<n;i++)
+	for(int i=1;i<n;i++)				//calculating the prefix function array
 	{
 		int j=pi[i-1];
 		while(j>0&&buff[j]!=buff[i])
@@ -32,13 +32,20 @@ int main()
 		pi[i]=j;
 	}
 
-	int ans=0;
+	vector<int> ans;
 	for(int i=s.size();i<n;i++)
 		if(pi[i]==s.size())
-			ans++;
-	cout<<"\nNumber of occurrences of the string in the text are : "<<ans<<endl;
-
-
+			ans.push_back(i);
+	
+	cout<<"\nNumber of occurrences of the string in the text are : "<<ans.size()<<endl;
+	
+	if(ans.size())
+	{
+		cout<<"\nString found at the positions : ";
+		for(auto x:ans)
+			cout<<x-2*s.size()<<" ";
+	}
+	cout<<endl;
 
 return 0;
 }
