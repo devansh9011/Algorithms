@@ -49,7 +49,7 @@ void quicksort(int l,int r,vector<int> &a)
 {
   if(l>=r)
     return;
-  int pivot=partition(l,r,a);		//partitioning the array
+  int pivot=partition(l,r,a);		  //partitioning the array
   quicksort(l,pivot-1,a);			  //calling quicksort for the left partition
   quicksort(pivot+1,r,a);			  //calling quicksort for the right partition
 }
