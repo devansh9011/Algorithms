@@ -8,7 +8,7 @@ Solution(z-algorithm):-
 	starting from current index a string of size p.size() is matching with 
 	prefix of length p.size() which indeed means that a occurrance is found at
 	the present index
-Time Complexity:-
+Runime Complexity:-
 	O(n+m) where n is the length of the pattern and m is the lenght of the text
 */
 

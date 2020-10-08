@@ -1,10 +1,12 @@
-//Problem Statement:-
-//Given an array of integers output the sorted array
-//Solution(Merge sort):-
-//the main idea of the algorithm is to sort the left half and right half separaterly
-//then merge both the array to get the fully sorted array and this is done recursively
-//runtime complexity O(n*log(n)) for array of length n
-
+/*
+Problem Statement:-
+	Given an array of integers output the sorted array
+Solution(Merge sort):-
+	The main idea of the algorithm is to sort the left half and right half separately
+	then merge both the array to get the fully sorted array and this is done recursively
+Runtime complexity:-
+	O(n*log(n)) for array of length n
+*/
 #include<iostream>
 #include<vector>
 

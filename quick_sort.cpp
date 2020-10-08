@@ -1,21 +1,20 @@
-//Problem statement:-
-//Given a array of size n, sort it and print it
-//Solution(Quick Sort Algorithm):-
-//Main idea is to use the divide and conquer strategy by  choosing a pivot
-//and making all the element smaller than pivot to the left of it and
-//remaining to the right of it, this work is done using the partition function()
-//this whole thing is then done recursively for the left part and for the right part
-//so in the end we get a sorted array
-
-//Time Complexity:-
-//best case n*log(n)
-//worst case n^2
-//average case n*log(n)
-
-//Note:-
-//it is not a stable sorting technique so incase the order of the equal elements 
-//matters then this is not a ideal choice.
-
+/*
+Problem statement:-
+    Given a array of size n, sort it and print it
+Solution(Quick Sort Algorithm):-
+    Main idea is to use the divide and conquer strategy by  choosing a pivot
+    and making all the element smaller than pivot to the left of it and
+    remaining to the right of it, this work is done using the partition function()
+    this whole thing is then done recursively for the left part and for the right part
+    so in the end we get a sorted array
+Runime Complexity:-
+    best case n*log(n)
+    worst case n^2
+    average case n*log(n)
+Note:-
+    It is not a stable sorting technique so incase the order of the equal elements 
+    matters then this is not a ideal choice.
+*/
 #include<iostream>
 #include<vector>
 

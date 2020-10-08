@@ -4,7 +4,7 @@ Problem Statement:-
 	relatively prime to n i.e. gcd(n,x)=1
 Solution:-
 	Using euler totient function
-Time Complexity:-
+Runtime Complexity:-
 	O(sqrt(n)) 
 */
 #include<iostream>

@@ -1,30 +1,28 @@
-//Problem Statement:-
-//Given an array A of size N, there are two types of queries on this array.
-//(1) q l r in this query you need to print the minimum in the sub-array A[l:r]
-//(2) u x y in this query you need to update A[x]=y
-
-//Solution(Mo's Algorithm):-
-//The main idea of the algorithm is to divide the array into blocks(ideally of length sqrt(N))
-//and precompute the minimum for the blocks and store it in a different array
-//and when query of type 1 is asked then traversing the block if required to reduce the runtime
-//complexity from O(N) to O(sqrt(N))
-//and when query of type 2 is asked then updating the array and recalculate the minimum for the
-//block in which it lies thus increasing the time complexity from O(1) to O(sqrt(N))
-//Overall the run time complexity of the algorithm is 
-//O(N) for preprocessing 
-//O(sqrt(N)) for answering the query and updating
-//so overall the complexity will be O(Q*sqrt(N)) where Q is the number of query
-
+/*
+Problem Statement:-
+	Given an array A of size N, you will be ansked q queries 
+	there are two types of queries on this array.
+	(1) q l r in this query you need to print the minimum in the sub-array A[l:r]
+	(2) u x y in this query you need to update A[x]=y
+Solution(Mo's Algorithm):-
+	The main idea of the algorithm is to divide the array into blocks(ideally of length sqrt(N))
+	and precompute the minimum for the blocks and store it in a different array
+	and when query of type 1 is asked then traversing the block if required to reduce the runtime
+	complexity from O(N) to O(sqrt(N))
+	and when query of type 2 is asked then updating the array and recalculate the minimum for the
+	block in which it lies thus increasing the time complexity from O(1) to O(sqrt(N))
+Runtime Complexity:-	
+	Overall the run time complexity of the algorithm is 
+	O(N) for preprocessing 
+	O(sqrt(N)) for answering the query and updating	
+	so overall the complexity will be O(Q*sqrt(N)) where Q is the number of query
+*/
 #include<bits/stdc++.h>
-using namespace std;
 
-#define xlr8 ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-#define nl '\n'
+using namespace std;
 
 signed main()
 {
-    xlr8;
-  
 	int n,q;                     				      //Array length and number of query
 	cin>>n>>q;
 	vector<int> a(n);
@@ -66,7 +64,7 @@ signed main()
 		    else
 		        for(;l<=r;l++)					        //when range lies in the same block
 		            ans=min(ans,a[l]);
-		    cout<<ans<<nl;
+		    cout<<ans<<endl;
 		}
 		else                                    //Query for updating the value
 		{
