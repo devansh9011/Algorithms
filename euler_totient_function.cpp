@@ -1,8 +1,11 @@
-/*Problem Statement:-
+/*
+Problem Statement:-
 	Given a number n, find the count of numbers from [1,n] that are
 	relatively prime to n i.e. gcd(n,x)=1
 Solution:-
-	using euler totient function
+	Using euler totient function
+Time Complexity:-
+	O(sqrt(n)) 
 */
 #include<iostream>
 
