@@ -26,7 +26,10 @@ int main()
 	vector<bool> prime(n+1, true);
 	prime[0]=prime[1]=false;
 
-	for(int i=2;i*i<=n;i++) 						//calculating the sieve
+	for(int i=4;i<=n;i+=2)							//marking all multiples of 2 as not prime
+		prime[i]=false;
+
+	for(int i=3;i*i<=n;i+=2) 						//calculating the sieve
 	    if(prime[i])
 	        for(int j=i*i;j<=n;j+=i)				//if the number is prime marking it's multiples not prime
 	            prime[j]=false;
