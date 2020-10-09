@@ -43,8 +43,10 @@ int main()
 		cout<<"\nEnter a number : ";
 		cin>>x;	
 		if(x>n||x<0)
-			return cout<<"\nInvalid number",0;
-
+		{
+			cout<<"\nInvalid number";
+			continue;
+		}
 		if(prime[x])
 			cout<<"\n"<<x<<" is a prime number\n";
 		else

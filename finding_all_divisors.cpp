@@ -18,6 +18,11 @@ int main()
 	cout<<"\nEnter a number : ";
 	int n;
 	cin>>n;
+	if(n<=0)
+	{
+		cout<<"\nCan't find the divisors";
+		continue;
+	}
 	set<int> s;
 	s.insert(1);
 	s.insert(n);
@@ -30,7 +35,6 @@ int main()
 	cout<<"\nDivisors of the number are : ";
 	for(auto x:s)
 		cout<<x<<" ";
-
 
 	return 0;
 }
